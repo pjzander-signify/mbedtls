@@ -1403,6 +1403,9 @@ static
  */
 __attribute__ ((noinline))
 #endif
+#if defined(__mips__) && defined(__mips16)
+__attribute__ ((nomips16))
+#endif
 void mpi_mul_hlp( size_t i, mbedtls_mpi_uint *s, mbedtls_mpi_uint *d, mbedtls_mpi_uint b )
 {
     mbedtls_mpi_uint c = 0, t = 0;
